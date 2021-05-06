@@ -22,9 +22,9 @@ app.get('/', (req, res) => {
     if (treatment == 'on') {
         res.send('Hello, Your Treatment is ON!');
     } else if (treatment == 'off') {
-        res.send('Hello, Your Treatment is OFF!!');
+        res.send('Hello, Your Treatment is OFF!');
     } else {
-        res.send('Hello, This Is The Default ');
+        res.send('Hello, This Is The Default!');
     }
 });
 
