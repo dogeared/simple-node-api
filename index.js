@@ -10,15 +10,18 @@ var factory = SplitFactory({
     }
 });
 var splitClient = factory.client();
-var treatment = 'control';
+
+var getTreatment = function() {
+    return splitClient.getTreatment('ANONYMOUS_USER', 'hello-treatment');
+}
 
 splitClient.on(splitClient.Event.SDK_READY, function () {
     console.log('split.io sdk is ready');
-    treatment = splitClient.getTreatment('ANONYMOUS_USER', 'hello-treatment');
-    console.log(treatment);
+    console.log('treatment is: ' + getTreatment());
 });
 
 app.get('/', (req, res) => {
+    let treatment = getTreatment();
     if (treatment == 'on') {
         res.send('Hello, Your Treatment is ON!');
     } else if (treatment == 'off') {
