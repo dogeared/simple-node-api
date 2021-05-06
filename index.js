@@ -1,5 +1,5 @@
 const express = require('express');
-const port = process.env.POST || 8000;
+const port = process.env.PORT || 8000;
 const app = express();
 
 var SplitFactory = require('@splitsoftware/splitio').SplitFactory;
