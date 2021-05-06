@@ -14,7 +14,7 @@ var treatment = 'control';
 
 splitClient.on(splitClient.Event.SDK_READY, function () {
     console.log('split.io sdk is ready');
-    treatment = splitClient.getTreatment(process.env.API_KEY, 'hello-treatment');
+    treatment = splitClient.getTreatment('ANONYMOUS_USER', 'hello-treatment');
     console.log(treatment);
 });
 
